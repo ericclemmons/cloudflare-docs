@@ -346,6 +346,9 @@ export default defineConfig({
 	integrations,
 	vite: {
 		...appVite,
+		build: {
+			minify: false,
+		},
 		server: {
 			watch: {
 				ignored: ["**/dist/**", "**/.astro-cache/**"],
