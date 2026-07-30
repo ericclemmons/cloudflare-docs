@@ -273,7 +273,6 @@ export default defineConfig({
 		defaultStrategy: "hover",
 	},
 	outDir: "./dist",
-	cacheDir: "node_modules/.astro",
 	markdown,
 	image: {
 		service: {
