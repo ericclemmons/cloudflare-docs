@@ -314,16 +314,6 @@ const appVite = {
 	// of react/react-dom; without dedupe, Vite can load two React copies and
 	// client islands fail to hydrate with "jsxDEV is not a function".
 	resolve: { dedupe: ["react", "react-dom"] },
-	build: {
-		rolldownOptions: {
-			experimental: {
-				// The default common-chunk optimization stalls after renderStart on
-				// this 22k-module graph. Keep normal code splitting, but skip its
-				// optional merge/load-avoidance optimization passes.
-				chunkOptimization: false,
-			},
-		},
-	},
 	plugins: [
 		buildDiagnostics,
 		tailwindcss(),
