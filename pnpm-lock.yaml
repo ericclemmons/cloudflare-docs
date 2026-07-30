@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  rolldown: file:./vendor/rolldown-1.2.1-cloudflare-memory-fix.0.tgz
+  rolldown: file:./vendor/rolldown-1.2.1-cloudflare-memory-fix.1.tgz
 
 importers:
 
@@ -5038,9 +5038,9 @@ packages:
   robust-predicates@3.0.3:
     resolution: {integrity: sha512-NS3levdsRIUOmiJ8FZWCP7LG3QpJyrs/TE0Zpf1yvZu8cAJJ6QMW92H1c7kWpdIHo8RvmLxN/o2JXTKHp74lUA==}
 
-  rolldown@file:vendor/rolldown-1.2.1-cloudflare-memory-fix.0.tgz:
-    resolution: {integrity: sha512-dqQoTJg62eDEBBdLct5ZlpR0b2IOt7dxZwOztzDkuiY9iM1PkGcS9rkAALNJl4EnzBhzUM1meH+Ilf7aHfZ1EA==, tarball: file:vendor/rolldown-1.2.1-cloudflare-memory-fix.0.tgz}
-    version: 1.2.1-cloudflare-memory-fix.0
+  rolldown@file:vendor/rolldown-1.2.1-cloudflare-memory-fix.1.tgz:
+    resolution: {integrity: sha512-JtDnPHNiRhVh7xK+6xCAOaIGrDOfAFpAcB3fSQcw1IwTF1uboCCcOa7RvVrpZ9nGS6PUo9F1BlKoIf0wEuSLIQ==, tarball: file:vendor/rolldown-1.2.1-cloudflare-memory-fix.1.tgz}
+    version: 1.2.1-cloudflare-memory-fix.1
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
@@ -11518,7 +11518,7 @@ snapshots:
 
   robust-predicates@3.0.3: {}
 
-  rolldown@file:vendor/rolldown-1.2.1-cloudflare-memory-fix.0.tgz:
+  rolldown@file:vendor/rolldown-1.2.1-cloudflare-memory-fix.1.tgz:
     dependencies:
       '@oxc-project/types': 0.142.0
       '@rolldown/pluginutils': 1.0.1
@@ -12239,7 +12239,7 @@ snapshots:
       lightningcss: 1.32.0
       picomatch: 4.0.5
       postcss: 8.5.21
-      rolldown: file:vendor/rolldown-1.2.1-cloudflare-memory-fix.0.tgz
+      rolldown: file:vendor/rolldown-1.2.1-cloudflare-memory-fix.1.tgz
       tinyglobby: 0.2.17
     optionalDependencies:
       '@types/node': 25.9.3
