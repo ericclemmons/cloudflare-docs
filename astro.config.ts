@@ -257,69 +257,12 @@ const componentsBarrelSideEffects = {
 	},
 };
 
-const buildDiagnostics = (() => {
-	const startedAt = performance.now();
-	let transformed = 0;
-	let parsed = 0;
-	let heartbeat: ReturnType<typeof setInterval> | undefined;
-
-	function log(phase: string, id?: string) {
-		const memory = process.memoryUsage();
-		const elapsed = ((performance.now() - startedAt) / 1000).toFixed(1);
-		const mib = (bytes: number) => (bytes / 1024 / 1024).toFixed(0);
-		console.log(
-			`[build-diagnostic] phase=${phase} elapsed=${elapsed}s transformed=${transformed} parsed=${parsed} rss=${mib(memory.rss)}MiB heapUsed=${mib(memory.heapUsed)}MiB external=${mib(memory.external)}MiB${id ? ` id=${id}` : ""}`,
-		);
-	}
-
-	return {
-		name: "cf:build-diagnostics",
-		apply: "build" as const,
-		enforce: "pre" as const,
-		buildStart() {
-			log("buildStart");
-			heartbeat = setInterval(() => log("heartbeat"), 30_000);
-			heartbeat.unref();
-		},
-		transform(_code: string, id: string) {
-			transformed += 1;
-			if (transformed % 250 === 0) log("transform", id);
-			return null;
-		},
-		moduleParsed(info: { id: string }) {
-			parsed += 1;
-			if (parsed % 250 === 0) log("moduleParsed", info.id);
-		},
-		buildEnd(error?: Error | null) {
-			log(error ? `buildEnd:error:${error.message}` : "buildEnd");
-		},
-		renderStart() {
-			log("renderStart");
-		},
-		generateBundle() {
-			log("generateBundle");
-		},
-		writeBundle() {
-			log("writeBundle");
-		},
-		closeBundle() {
-			if (heartbeat) clearInterval(heartbeat);
-			log("closeBundle");
-		},
-	};
-})();
-
 const appVite = {
 	// Force a single React instance in case any dependency ships its own copy
 	// of react/react-dom; without dedupe, Vite can load two React copies and
 	// client islands fail to hydrate with "jsxDEV is not a function".
 	resolve: { dedupe: ["react", "react-dom"] },
-	plugins: [
-		buildDiagnostics,
-		tailwindcss(),
-		componentsBarrelSideEffects,
-		iconAlias,
-	],
+	plugins: [tailwindcss(), componentsBarrelSideEffects, iconAlias],
 };
 
 // https://astro.build/config

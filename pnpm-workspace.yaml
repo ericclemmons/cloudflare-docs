@@ -13,14 +13,8 @@ minimumReleaseAgeExclude:
   - miniflare
   - workerd
   - "@cloudflare/workers-types"
-  - rolldown
-  - "@rolldown/*"
-
-# Fork-only Workers Builds diagnostic: test Rolldown's latest output and
-# code-splitting fixes while keeping Vite on the latest stable release.
 overrides:
-  # Test package assembled from rolldown/rolldown#10554's successful Linux
-  # native-build artifact. It includes the patched JS glue and native binding.
+  # Test the native memory fix from rolldown/rolldown#10554.
   rolldown: file:./vendor/rolldown-1.2.1-cloudflare-memory-fix.0.tgz
 
 # On Astro 7 the @astrojs/mdx → @astrojs/markdown-satteri peer is satisfied
