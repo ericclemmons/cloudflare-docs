@@ -129,6 +129,7 @@
 		"redirects-in-workers": "0.0.7",
 		"rehype": "13.0.2",
 		"remark": "15.0.1",
+		"rolldown": "https://pkg.pr.new/rolldown/rolldown@10554",
 		"satteri": "^0.9.1",
 		"sharp": "0.35.3",
 		"strip-markdown": "6.0.0",

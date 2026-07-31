@@ -15,15 +15,14 @@ minimumReleaseAgeExclude:
   - "@cloudflare/workers-types"
 overrides:
   # Test the native memory fix from rolldown/rolldown#10554.
-  rolldown: file:./vendor/rolldown-1.2.1-cloudflare-memory-fix.1.tgz
+  rolldown: $rolldown
 
 # On Astro 7 the @astrojs/mdx → @astrojs/markdown-satteri peer is satisfied
 # natively (nimbus-docs pulls markdown-satteri 0.3.4, @astrojs/mdx@7 peers
 # ^0.3.1), so the old allowedVersions override is obsolete and has been removed.
 
-# Prevent transitive dependencies from using exotic sources (git repos, direct tarball URLs).
-# Only direct dependencies may use exotic sources.
-blockExoticSubdeps: true
+# Allow the pkg.pr.new Rolldown override above for this test branch.
+blockExoticSubdeps: false
 
 # Explicit allowlist of packages permitted to run install scripts.
 # These are well-known packages that require build scripts to download platform-specific binaries.
