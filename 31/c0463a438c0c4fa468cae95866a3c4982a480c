@@ -1,0 +1,19 @@
+src/content/changelog/workers/2026-10-12-workers-builds-tooling-update.mdx
+  s_fef2cbd7733add::t_cae93a02ddc7a7 1-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "31c0463a438c0c4fa468cae95866a3c4982a480c",
+  "prompts": {},
+  "sessions": {
+    "s_fef2cbd7733add": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a13182-20b7-72b0-8ac7-03dab11a556c",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Eric Clemmons <eclemmons@cloudflare.com>"
+    }
+  }
+}
